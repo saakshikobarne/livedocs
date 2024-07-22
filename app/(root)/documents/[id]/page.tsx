@@ -1,6 +1,7 @@
 import { Editor } from '@/components/editor/Editor'
 import React from 'react'
 import Header from '@/components/Header'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 const Document = () => {
   return (
@@ -8,9 +9,15 @@ const Document = () => {
       <Header>
         <div className='flex w-fit items-center justify-center gap-2'>
           <p className='document-title'>
-            this is a fake doc title
+            Share
           </p>
-        </div>        
+        </div> 
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>       
       </Header>
       <Editor/>
     </div>
